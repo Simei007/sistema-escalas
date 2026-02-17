@@ -1,0 +1,110 @@
+﻿<div class="container">
+
+    <div class="topo">
+        <h1>Painel de Escalas</h1>
+        <div class="topo-acoes">
+            <button type="button" (click)="irParaCadastroMotoristas()">Cadastrar Motorista</button>
+            <button class="btn-secundario" type="button" (click)="sair()">Sair</button>
+        </div>
+    </div>
+
+    <div *ngIf="mensagem" class="alert alert-success">
+        {{ mensagem }}
+    </div>
+
+    <div *ngIf="erro" class="alert alert-error">
+        {{ erro }}
+    </div>
+
+    <div class="card">
+        <h2>{{ editandoEscalaId ? 'Editar Escala' : 'Nova Escala' }}</h2>
+
+        <div class="grid">
+
+            <div>
+                <label for="motorista">Motorista</label>
+                <select id="motorista" [(ngModel)]="novaEscala.usuario_id">
+                    <option value="">Selecione</option>
+                    <option *ngFor="let motorista of motoristas" [ngValue]="motorista.id">
+                        {{ motorista.nome }}
+                    </option>
+                </select>
+            </div>
+
+            <div>
+                <label for="data">Data</label>
+                <input id="data" type="date" [(ngModel)]="novaEscala.data">
+            </div>
+
+            <div>
+                <label for="hora_inicio">Hora Inicio</label>
+                <input id="hora_inicio" type="time" [(ngModel)]="novaEscala.hora_inicio">
+            </div>
+
+            <div>
+                <label for="hora_fim">Hora Fim</label>
+                <input id="hora_fim" type="time" [(ngModel)]="novaEscala.hora_fim">
+            </div>
+
+            <div>
+                <label for="servico">Servico</label>
+                <select id="servico" [(ngModel)]="novaEscala.servico">
+                    <option value="">Selecione</option>
+                    <option>Transporte Escolar</option>
+                    <option>Viagem</option>
+                    <option>Manutencao</option>
+                    <option>Plantao</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="acoes-form">
+            <button [disabled]="salvando" (click)="salvarEscala()">
+                {{ salvando ? 'Salvando...' : (editandoEscalaId ? 'Atualizar Escala' : 'Salvar Escala') }}
+            </button>
+            <button *ngIf="editandoEscalaId" class="btn-secundario" [disabled]="salvando" (click)="cancelarEdicao()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Escalas Cadastradas</h2>
+
+        <table *ngIf="escalas.length > 0">
+            <thead>
+                <tr>
+                    <th>Motorista</th>
+                    <th>Data</th>
+                    <th>Inicio</th>
+                    <th>Fim</th>
+                    <th>Servico</th>
+                    <th>Acoes</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let escala of escalas">
+                    <td>{{ getNomeMotorista(escala.usuario_id) }}</td>
+                    <td>{{ escala.data }}</td>
+                    <td>{{ escala.hora_inicio }}</td>
+                    <td>{{ escala.hora_fim }}</td>
+                    <td>{{ escala.servico }}</td>
+                    <td class="acoes-linha">
+                        <button class="btn-secundario" (click)="iniciarEdicao(escala)">Editar</button>
+                        <button class="btn-perigo" (click)="removerEscala(escala.id)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p *ngIf="carregando">Carregando escalas...</p>
+
+        <p *ngIf="!carregando && escalas.length === 0">
+            Nenhuma escala cadastrada.
+        </p>
+
+    </div>
+
+</div>

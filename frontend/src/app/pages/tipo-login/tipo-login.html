@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="hero">
+        <h1>{{ titulo }}</h1>
+        <p>{{ subtitulo }}</p>
+    </div>
+
+    <div class="opcoes">
+        <button class="card card-admin" type="button" (click)="irParaAdmin()">
+            <h2>Login Escalante</h2>
+            <p>Gerencie motoristas e monte escalas.</p>
+            <span>Entrar como escalante</span>
+        </button>
+
+        <button class="card card-motorista" type="button" (click)="irParaMotorista()">
+            <h2>Login Motorista</h2>
+            <p>Consulte suas escalas e horarios.</p>
+            <span>Entrar como motorista</span>
+        </button>
+    </div>
+</div>

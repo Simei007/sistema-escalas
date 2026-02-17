@@ -1,0 +1,106 @@
+:host {
+  --bg-1: #eef8f3;
+  --bg-2: #d8ecf9;
+  --card: #fbfffd;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #15803d;
+  --accent-2: #166534;
+  display: block;
+  min-height: 100vh;
+  padding: 32px 16px;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(21, 128, 61, 0.16), transparent 38%),
+    radial-gradient(circle at 86% 88%, rgba(14, 116, 144, 0.13), transparent 40%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}
+
+.container {
+  max-width: 420px;
+  margin: 8vh auto 0;
+  padding: 28px;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+h3 {
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  padding: 10px 12px;
+  color: var(--text);
+}
+
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.16);
+}
+
+.btn.btn-success {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn.btn-success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(21, 128, 61, 0.25);
+}
+
+.btn.btn-success:active {
+  transform: translateY(0);
+}
+
+.btn.btn-success:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.erro {
+  margin: 10px 0 12px;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  :host {
+    padding: 18px 10px;
+  }
+
+  .container {
+    margin-top: 5vh;
+    padding: 22px;
+  }
+}

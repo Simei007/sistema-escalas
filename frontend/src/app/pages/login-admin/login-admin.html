@@ -1,0 +1,21 @@
+<div class="container">
+    <h3>Login Escalante</h3>
+    <p class="subtitle">Acesse o painel administrativo de escalas.</p>
+
+    <div class="field">
+        <label for="login">Login</label>
+        <input id="login" class="form-control" [(ngModel)]="login" placeholder="Seu login" autocomplete="username">
+    </div>
+
+    <div class="field">
+        <label for="senha">Senha</label>
+        <input id="senha" class="form-control" [(ngModel)]="senha" type="password" placeholder="Sua senha"
+            autocomplete="current-password">
+    </div>
+
+    <p *ngIf="erro" class="erro">{{ erro }}</p>
+
+    <button class="btn btn-primary" [disabled]="carregando" (click)="entrar()">
+        {{ carregando ? 'Entrando...' : 'Entrar' }}
+    </button>
+</div>
