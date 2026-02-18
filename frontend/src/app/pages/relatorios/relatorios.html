@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="topo">
+    <div>
+      <h2>Relatorios de Escalas</h2>
+      <p class="subtitle">Consulte por dia e por motorista, em ordem cronologica.</p>
+    </div>
+    <div class="topo-acoes">
+      <button type="button" class="btn btn-secondary" (click)="voltar()">Voltar</button>
+      <button type="button" class="btn btn-secondary" (click)="sair()">Sair</button>
+    </div>
+  </div>
+
+  <div class="card filtros">
+    <div class="field">
+      <label for="filtroData">Relatorio do Dia</label>
+      <input id="filtroData" type="date" [(ngModel)]="filtroData" />
+    </div>
+
+    <div class="field">
+      <label for="filtroMotorista">Relatorio por Motorista</label>
+      <select id="filtroMotorista" [(ngModel)]="filtroMotoristaId">
+        <option value="">Selecione</option>
+        <option *ngFor="let motorista of motoristas" [ngValue]="motorista.id">
+          {{ motorista.nome }}
+        </option>
+      </select>
+    </div>
+
+    <div class="field field-btn">
+      <button type="button" class="btn btn-secondary" [disabled]="carregando" (click)="carregarDados()">
+        {{ carregando ? 'Atualizando...' : 'Atualizar' }}
+      </button>
+    </div>
+  </div>
+
+  <p *ngIf="erro" class="erro">{{ erro }}</p>
+
+  <div class="card">
+    <h3>Relatorio do Dia <span *ngIf="filtroData">({{ formatarDataBr(filtroData) }})</span></h3>
+
+    <table *ngIf="!carregando && relatorioDoDia.length > 0">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Inicio Jornada</th>
+          <th>Hora Saida</th>
+          <th>Saida</th>
+          <th>Motorista</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let escala of relatorioDoDia">
+          <td>{{ formatarDataBr(escala.data) }}</td>
+          <td>{{ formatarHoraSemSegundos(escala.hora_inicio) }}</td>
+          <td>{{ formatarHoraSemSegundos(escala.hora_saida) }}</td>
+          <td>{{ escala.saida }}</td>
+          <td>{{ getNomeMotorista(escala.usuario_id) }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="!carregando && !filtroData" class="vazio">Selecione uma data para gerar o relatorio.</p>
+    <p *ngIf="!carregando && filtroData && relatorioDoDia.length === 0" class="vazio">Nenhuma escala para esta data.</p>
+  </div>
+
+  <div class="card">
+    <h3>Relatorio por Motorista</h3>
+
+    <table *ngIf="!carregando && relatorioPorMotorista.length > 0">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Inicio Jornada</th>
+          <th>Hora Saida</th>
+          <th>Saida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let escala of relatorioPorMotorista">
+          <td>{{ formatarDataBr(escala.data) }}</td>
+          <td>{{ formatarHoraSemSegundos(escala.hora_inicio) }}</td>
+          <td>{{ formatarHoraSemSegundos(escala.hora_saida) }}</td>
+          <td>{{ escala.saida }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="!carregando && !filtroMotoristaId" class="vazio">Selecione um motorista para gerar o relatorio.</p>
+    <p *ngIf="!carregando && filtroMotoristaId && relatorioPorMotorista.length === 0" class="vazio">Nenhuma escala para este motorista.</p>
+  </div>
+</div>
+

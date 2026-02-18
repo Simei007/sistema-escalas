@@ -1,0 +1,101 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.topo-acoes {
+  display: flex;
+  gap: 10px;
+}
+
+.subtitle {
+  margin: 0;
+  color: #5d6c84;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input,
+select {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #d6deea;
+  border-radius: 10px;
+  padding: 0 12px;
+  font-size: 16px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #6a758b;
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid #ecf0f5;
+  padding: 12px 8px;
+}
+
+.erro {
+  color: #b42318;
+  margin: 6px 0 12px;
+}
+
+.vazio {
+  color: #627188;
+}
+
+@media (max-width: 700px) {
+  .topo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

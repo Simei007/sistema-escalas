@@ -25,7 +25,7 @@ describe('Escalante', () => {
       imports: [Escalante],
       providers: [{ provide: ApiService, useValue: apiMock }, provideRouter([])]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(Escalante);
     component = fixture.componentInstance;
@@ -41,8 +41,8 @@ describe('Escalante', () => {
       usuario_id: '',
       data: '',
       hora_inicio: '',
-      hora_fim: '',
-      servico: ''
+      hora_saida: '',
+      saida: ''
     };
 
     component.salvarEscala();

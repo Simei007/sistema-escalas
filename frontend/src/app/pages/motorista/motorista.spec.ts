@@ -18,8 +18,8 @@ describe('Motorista', () => {
           usuario_id: 2,
           data: '2026-02-18',
           hora_inicio: '07:00:00',
-          hora_fim: '11:00:00',
-          servico: 'Transporte Escolar'
+          hora_saida: '07:30:00',
+          saida: 'Transporte Escolar'
         }
       ]))
     };
@@ -42,7 +42,7 @@ describe('Motorista', () => {
 
   it('should have a next shift', () => {
     expect(component.proximaEscala).not.toBeNull();
-    expect(component.proximaEscala?.servico).toBe('Transporte Escolar');
+    expect(component.proximaEscala?.saida).toBe('Transporte Escolar');
   });
 
   it('should render title', () => {

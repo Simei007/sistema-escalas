@@ -3,6 +3,7 @@
     <div class="topo">
         <h1>Painel de Escalas</h1>
         <div class="topo-acoes">
+            <button type="button" (click)="abrirRelatorios()">Relatorios</button>
             <button type="button" (click)="irParaCadastroMotoristas()">Cadastrar Motorista</button>
             <button class="btn-secundario" type="button" (click)="sair()">Sair</button>
         </div>
@@ -42,18 +43,17 @@
             </div>
 
             <div>
-                <label for="hora_fim">Hora Fim</label>
-                <input id="hora_fim" type="time" [(ngModel)]="novaEscala.hora_fim">
+                <label for="hora_saida">Hora da Saida</label>
+                <input id="hora_saida" type="time" [(ngModel)]="novaEscala.hora_saida">
             </div>
 
+
+
             <div>
-                <label for="servico">Servico</label>
-                <select id="servico" [(ngModel)]="novaEscala.servico">
+                <label for="saida">Saida</label>
+                <select id="saida" [(ngModel)]="novaEscala.saida">
                     <option value="">Selecione</option>
-                    <option>Transporte Escolar</option>
-                    <option>Viagem</option>
-                    <option>Manutencao</option>
-                    <option>Plantao</option>
+                    <option *ngFor="let saida of saidasDisponiveis">{{ saida }}</option>
                 </select>
             </div>
 
@@ -77,9 +77,9 @@
                 <tr>
                     <th>Motorista</th>
                     <th>Data</th>
-                    <th>Inicio</th>
-                    <th>Fim</th>
-                    <th>Servico</th>
+                    <th>Inicio Jornada</th>
+                    <th>Hora Saida</th>
+                    <th>Saida</th>
                     <th>Acoes</th>
                 </tr>
             </thead>
@@ -87,10 +87,10 @@
             <tbody>
                 <tr *ngFor="let escala of escalas">
                     <td>{{ getNomeMotorista(escala.usuario_id) }}</td>
-                    <td>{{ escala.data }}</td>
-                    <td>{{ escala.hora_inicio }}</td>
-                    <td>{{ escala.hora_fim }}</td>
-                    <td>{{ escala.servico }}</td>
+                    <td>{{ formatarDataBr(escala.data) }}</td>
+                    <td>{{ formatarHoraSemSegundos(escala.hora_inicio) }}</td>
+                    <td>{{ formatarHoraSemSegundos(escala.hora_saida) }}</td>
+                    <td>{{ escala.saida }}</td>
                     <td class="acoes-linha">
                         <button class="btn-secundario" (click)="iniciarEdicao(escala)">Editar</button>
                         <button class="btn-perigo" (click)="removerEscala(escala.id)">Excluir</button>

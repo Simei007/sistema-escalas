@@ -28,8 +28,8 @@ export interface EscalaPayload {
   usuario_id: number;
   data: string;
   hora_inicio: string;
-  hora_fim: string;
-  servico: string;
+  hora_saida: string;
+  saida: string;
 }
 
 export interface EscalaResumo {
@@ -37,8 +37,8 @@ export interface EscalaResumo {
   usuario_id: number;
   data: string;
   hora_inicio: string;
-  hora_fim: string;
-  servico: string;
+  hora_saida: string;
+  saida: string;
 }
 
 @Injectable({ providedIn: 'root' })

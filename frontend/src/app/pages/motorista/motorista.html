@@ -1,46 +1,62 @@
 ﻿<div class="container">
+  <div class="modal-overlay" *ngIf="avisoModalAberto" (click)="fecharModalAviso()">
+    <div class="modal-aviso" (click)="$event.stopPropagation()">
+      <h3>Aviso Importante</h3>
+      <p>Favor cumprir os horários com pontualidade.</p>
+      <p>Em caso de dúvidas, entrar em contato com o tráfego.</p>
+      <ul>
+        <li>Não esquecer o pendrive de telemetria.</li>
+        <li>Conferir as informações nos discos TCO.</li>
+        <li>Verificar se há folha de ponto em seu nome para preenchimento.</li>
+      </ul>
+      <button type="button" (click)="fecharModalAviso()">Entendi</button>
+    </div>
+  </div>
+
   <div class="topo">
     <h2>Painel do Motorista</h2>
     <button type="button" class="btn-sair" (click)="sair()">Sair</button>
   </div>
 
-  <p class="subtitle">Bem-vindo, {{ nomeMotorista }}. Confira suas escalas.</p>
+  <p class="subtitle">Bem-vindo, {{ nomeMotorista }}. Confira sua escala.</p>
 
   <p *ngIf="erro" class="erro">{{ erro }}</p>
 
   <div class="proxima" *ngIf="!carregando && proximaEscala as escala">
-    <h3>Proxima Escala</h3>
-    <p><strong>Data:</strong> {{ escala.data }}</p>
-    <p><strong>Horario:</strong> {{ escala.hora_inicio }} - {{ escala.hora_fim }}</p>
-    <p><strong>Servico:</strong> {{ escala.servico }}</p>
+    <h3>Próxima Escala</h3>
+    <p><strong>Data:</strong> {{ formatarDataBr(escala.data) }}</p>
+    <p><strong>Inicio da Jornada:</strong> {{ formatarHoraSemSegundos(escala.hora_inicio) }}</p>
+    <p><strong>Hora da Saida:</strong> {{ formatarHoraSemSegundos(escala.hora_saida) }}</p>
+    <p><strong>Saida:</strong> {{ escala.saida }}</p>
   </div>
 
   <div class="card">
     <div class="header-lista">
-      <h3>Minhas Escalas</h3>
-      <button type="button" (click)="carregarEscalas()" [disabled]="carregando">{{ carregando ? 'Atualizando...' : 'Atualizar' }}</button>
+      <h3>Minha Escala</h3>
+      <button type="button" (click)="carregarEscalas()" [disabled]="carregando">{{ carregando ? 'Atualizando...' :
+        'Atualizar' }}</button>
     </div>
 
     <table *ngIf="!carregando && escalas.length > 0">
       <thead>
         <tr>
           <th>Data</th>
-          <th>Inicio</th>
-          <th>Fim</th>
-          <th>Servico</th>
+          <th>Inicio Jornada</th>
+          <th>Hora Saida</th>
+          <th>Saida</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let escala of escalas">
-          <td>{{ escala.data }}</td>
-          <td>{{ escala.hora_inicio }}</td>
-          <td>{{ escala.hora_fim }}</td>
-          <td>{{ escala.servico }}</td>
+          <td>{{ formatarDataBr(escala.data) }}</td>
+          <td>{{ formatarHoraSemSegundos(escala.hora_inicio) }}</td>
+          <td>{{ formatarHoraSemSegundos(escala.hora_saida) }}</td>
+          <td>{{ escala.saida }}</td>
         </tr>
       </tbody>
     </table>
 
-    <p *ngIf="carregando" class="vazio">Carregando escalas...</p>
+    <p *ngIf="carregando" class="vazio">Carregando escala...</p>
     <p *ngIf="!carregando && escalas.length === 0" class="vazio">Nenhuma escala cadastrada.</p>
   </div>
 </div>
