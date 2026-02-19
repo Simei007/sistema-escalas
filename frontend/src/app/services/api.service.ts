@@ -53,6 +53,15 @@ export class ApiService {
       return 'http://localhost:3000';
     }
 
+    const runtimeOverride = window.localStorage.getItem('apiBaseUrl');
+    if (runtimeOverride) {
+      return runtimeOverride;
+    }
+
+    if (window.location.hostname === 'simei007.github.io') {
+      return 'https://sistema-escalas-api.onrender.com';
+    }
+
     return `${window.location.protocol}//${window.location.hostname}:3000`;
   }
 

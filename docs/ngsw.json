@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1771537430571,
+  "timestamp": 1771537828508,
   "index": "/sistema-escalas/index.csr.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/sistema-escalas/favicon.ico",
         "/sistema-escalas/index.html",
-        "/sistema-escalas/main-PS4TJTOD.js",
+        "/sistema-escalas/main-I2JN6DPQ.js",
         "/sistema-escalas/manifest.webmanifest",
         "/sistema-escalas/styles-5INURTSO.css"
       ],
@@ -53,9 +53,9 @@
   "hashTable": {
     "/sistema-escalas/expresso-sem-fundo.png": "0dfccd9987b1f843b0a099af369e501f73d5116b",
     "/sistema-escalas/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "/sistema-escalas/index.html": "a978d24a2f19e53ed45a79059c39a143ecffcb46",
+    "/sistema-escalas/index.html": "379edbd9096d2a84ba6ce0d48de64cf7ffbb1c57",
     "/sistema-escalas/logotipo-sem-fundo.png": "493bb7ef6fbc981e9da48001d3b840b216753d73",
-    "/sistema-escalas/main-PS4TJTOD.js": "2afa1de75ef24144ef80f78cfa1851e75d3a48a2",
+    "/sistema-escalas/main-I2JN6DPQ.js": "e7c3800afa32ec748c14d15bcdbad0d83d94f91d",
     "/sistema-escalas/manifest.webmanifest": "714d1bdc6dc42815c7bc2e5fc4d266855e7f6605",
     "/sistema-escalas/motorista-banner.svg": "64b29fd3a60fdb30aa05527da122a58d8be58d20",
     "/sistema-escalas/styles-5INURTSO.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
