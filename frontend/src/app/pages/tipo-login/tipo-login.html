@@ -21,4 +21,11 @@
             <span>Entrar</span>
         </button>
     </div>
+
+    <section class="qr-box" *ngIf="exibirQrDesktop && qrCodeUrl">
+        <h3>Abrir no celular</h3>
+        <p>Escaneie o QR code para acessar esta mesma pagina no seu telefone.</p>
+        <img [src]="qrCodeUrl" [alt]="'QR code para ' + compartilharUrl">
+        <small>{{ compartilharUrl }}</small>
+    </section>
 </div>

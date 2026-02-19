@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1771536836319,
-  "index": "/sistema-escalas/index.csr.html",
+  "timestamp": 1771537119288,
+  "index": "/index.csr.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,11 +11,11 @@
         "ignoreVary": true
       },
       "urls": [
-        "/sistema-escalas/favicon.ico",
-        "/sistema-escalas/index.html",
-        "/sistema-escalas/main-QFDHJRBG.js",
-        "/sistema-escalas/manifest.webmanifest",
-        "/sistema-escalas/styles-5INURTSO.css"
+        "/favicon.ico",
+        "/index.html",
+        "/main-FLGOY4RP.js",
+        "/manifest.webmanifest",
+        "/styles-5INURTSO.css"
       ],
       "patterns": []
     },
@@ -27,9 +27,9 @@
         "ignoreVary": true
       },
       "urls": [
-        "/sistema-escalas/expresso-sem-fundo.png",
-        "/sistema-escalas/logotipo-sem-fundo.png",
-        "/sistema-escalas/motorista-banner.svg"
+        "/expresso-sem-fundo.png",
+        "/logotipo-sem-fundo.png",
+        "/motorista-banner.svg"
       ],
       "patterns": []
     }
@@ -51,14 +51,14 @@
     }
   ],
   "hashTable": {
-    "/sistema-escalas/expresso-sem-fundo.png": "0dfccd9987b1f843b0a099af369e501f73d5116b",
-    "/sistema-escalas/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "/sistema-escalas/index.html": "6504f10d849cfc3e40d5a2e0c37d89125639f073",
-    "/sistema-escalas/logotipo-sem-fundo.png": "493bb7ef6fbc981e9da48001d3b840b216753d73",
-    "/sistema-escalas/main-QFDHJRBG.js": "fa0509136c9cc28164a6de97ee324d94fb52b1a3",
-    "/sistema-escalas/manifest.webmanifest": "714d1bdc6dc42815c7bc2e5fc4d266855e7f6605",
-    "/sistema-escalas/motorista-banner.svg": "64b29fd3a60fdb30aa05527da122a58d8be58d20",
-    "/sistema-escalas/styles-5INURTSO.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "/expresso-sem-fundo.png": "0dfccd9987b1f843b0a099af369e501f73d5116b",
+    "/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/index.html": "e68434b8a4751c7e52bd47a66481af02a35c7d9b",
+    "/logotipo-sem-fundo.png": "493bb7ef6fbc981e9da48001d3b840b216753d73",
+    "/main-FLGOY4RP.js": "752bcc0e3015f188b8cc7d404d6a1b01d5073eae",
+    "/manifest.webmanifest": "714d1bdc6dc42815c7bc2e5fc4d266855e7f6605",
+    "/motorista-banner.svg": "64b29fd3a60fdb30aa05527da122a58d8be58d20",
+    "/styles-5INURTSO.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
   },
   "navigationUrls": [
     {

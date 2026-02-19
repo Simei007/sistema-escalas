@@ -110,6 +110,42 @@ h2 {
   color: var(--mot-1);
 }
 
+.qr-box {
+  margin: 18px auto 0;
+  max-width: 360px;
+  padding: 16px;
+  border-radius: 16px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.09);
+}
+
+.qr-box h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.qr-box p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.qr-box img {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  background: #fff;
+}
+
+.qr-box small {
+  display: block;
+  margin-top: 8px;
+  color: #4b5563;
+  word-break: break-all;
+}
+
 @media (max-width: 700px) {
   :host {
     padding: 16px 10px;
