@@ -2,6 +2,7 @@ const router = require('express').Router();
 const db = require('../db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const JWT_SECRET = process.env.JWT_SECRET || 'segredo';
 
 router.post('/login', async (req,res)=>{
   const {login,senha} = req.body;
@@ -18,7 +19,7 @@ router.post('/login', async (req,res)=>{
 
   const token = jwt.sign(
     {id:rows[0].id, role:rows[0].role},
-    'segredo'
+    JWT_SECRET
   );
 
   res.json({token, role: rows[0].role, nome: rows[0].nome});

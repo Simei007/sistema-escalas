@@ -1,13 +1,18 @@
 ﻿<div class="container">
+  <div class="banner-motorista">
+    <img src="/expresso-sem-fundo.png" alt="Logo Expresso" />
+
+  </div>
+
   <div class="modal-overlay" *ngIf="avisoModalAberto" (click)="fecharModalAviso()">
     <div class="modal-aviso" (click)="$event.stopPropagation()">
       <h3>Aviso Importante</h3>
-      <p>Favor cumprir os horários com pontualidade.</p>
-      <p>Em caso de dúvidas, entrar em contato com o tráfego.</p>
+      <p>Favor cumprir os horarios com pontualidade.</p>
+      <p>Em caso de duvidas, entrar em contato com o trafego.</p>
       <ul>
-        <li>Não esquecer o pendrive de telemetria.</li>
-        <li>Conferir as informações nos discos TCO.</li>
-        <li>Verificar se há folha de ponto em seu nome para preenchimento.</li>
+        <li>Nao esquecer o pendrive de telemetria.</li>
+        <li>Conferir as informacoes nos discos TCO.</li>
+        <li>Verificar se ha folha de ponto em seu nome para preenchimento.</li>
       </ul>
       <button type="button" (click)="fecharModalAviso()">Entendi</button>
     </div>
@@ -23,7 +28,7 @@
   <p *ngIf="erro" class="erro">{{ erro }}</p>
 
   <div class="proxima" *ngIf="!carregando && proximaEscala as escala">
-    <h3>Próxima Escala</h3>
+    <h3>Proxima Escala</h3>
     <p><strong>Data:</strong> {{ formatarDataBr(escala.data) }}</p>
     <p><strong>Inicio da Jornada:</strong> {{ formatarHoraSemSegundos(escala.hora_inicio) }}</p>
     <p><strong>Hora da Saida:</strong> {{ formatarHoraSemSegundos(escala.hora_saida) }}</p>
@@ -60,3 +65,4 @@
     <p *ngIf="!carregando && escalas.length === 0" class="vazio">Nenhuma escala cadastrada.</p>
   </div>
 </div>
+
