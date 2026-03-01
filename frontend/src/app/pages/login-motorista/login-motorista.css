@@ -7,6 +7,7 @@
   --accent: #15803d;
   --accent-2: #166534;
   display: block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   padding: 32px 16px;
   background:

@@ -5,8 +5,10 @@ const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET || 'segredo';
 
 router.post('/login', async (req,res)=>{
-  const {login,senha} = req.body;
+  console.log("BODY RECEBIDO:", req.body);
 
+  const {login,senha} = req.body;
+    
   const [rows] = await db.query(
     "SELECT * FROM usuarios WHERE login=?",
     [login]
