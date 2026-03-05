@@ -1,0 +1,29 @@
+//para executar o app vc deve:
+
+# Terminal 1 (API)
+cd C:\ESTUDOS\sistema-escalas\backend
+copy .env.example .env   # só na primeira vez
+npm install              # só na primeira vez
+npm start
+
+# Terminal 2 (Angular)
+cd C:\ESTUDOS\sistema-escalas\frontend
+npm install              # só na primeira vez
+npm start
+
+PS C:\ESTUDOS\sistema-escalas> cd backend
+PS C:\ESTUDOS\sistema-escalas\backend> npm start
+Debugger listening on ws://127.0.0.1:50916/0dbae5c6-17e2-41f1-b777-2296f667105b
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+
+> backend@1.0.0 start
+> node server.js
+
+Debugger listening on ws://127.0.0.1:63954/8748dce1-a70f-431f-9185-a2e8bce914b5
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+[dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Servidor rodando na porta 3000 (0.0.0.0)
+BODY RECEBIDO: { login: '08446356775', senha: '210022' }
+BODY RECEBIDO: { login: 'admin', senha: 'admin123' }

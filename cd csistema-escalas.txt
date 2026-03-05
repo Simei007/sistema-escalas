@@ -1,0 +1,21 @@
+cd c:\sistema-escalas
+git status
+git add .
+git commit -m "feat: sistema-escalas inicial"
+git branch -M main
+git remote remove origin
+git remote add origin https://github.com/Simei007/sistema-escalas.git
+git push -u origin main
+
+
+depois: 
+
+Clique em Publish Branch.
+
+Depois:
+
+Escolha Publish to GitHub.
+Defina o nome sistema-escalas.
+Escolha Public ou Private.
+Confirme.
+Quando terminar, o ícone de nuvem deve sumir e o repo vai aparecer no GitHub.

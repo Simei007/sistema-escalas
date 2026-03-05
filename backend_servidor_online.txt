@@ -1,0 +1,19 @@
+Agora: no Render
+
+Clique em New Blueprint Instance.
+Selecione o repositório Simei007/sistema-escalas.
+Confirme o arquivo render.yaml.
+Clique para criar.
+Depois ele vai pedir as variáveis (sync: false). Preencha:
+
+DB_HOST
+DB_PORT (normalmente 3306)
+DB_USER
+DB_PASSWORD
+DB_NAME
+JWT_SECRET
+Quando terminar deploy:
+
+Abra https://sistema-escalas-api.onrender.com/health
+Se retornar {"status":"ok"}, o backend está no ar.
+Teste o login no celular no Pages.
